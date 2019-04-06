@@ -1,0 +1,104 @@
+<template id="homepage_template">
+  <div>
+    <section class="section">
+      <div class="container titles-container">
+        <h1 class="title is-1 wos-font">Welcome to the world of science.</h1>
+        <h3 class="subtitle is-3">Read, learn, and share.</h3>
+      </div>
+      <FrontpageArticle v-bind:articles="frontPageArticles"/>
+      <div class="container article-list-container">
+        <div class="columns">
+          <div class="column" style="">
+            <h1 class="title is-3 wos-font">Fresh Articles</h1>
+            <ul class="article-list">
+              <li v-for="(article, index) in listArticles" :key="index">
+                <ListArticle :article="article" :index="index"/>
+              </li>
+            </ul>
+          </div>
+          <div class="is-divider-vertical" data-content="OR"></div>
+          <div class="column">
+            <h1 class="title is-3 wos-font">News</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="is-divider"></div>
+            <h1 class="title is-3 wos-font">Discover</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <br>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Footer/>
+  </div>
+</template>
+
+<script type="text/javascript">
+  // Components
+  import FrontpageArticle from '@/components/FrontpageArticle';
+  import Footer from '@/components/Footer';
+  import ListArticle from '@/components/ListArticle';
+
+  // Axios
+  import axios from 'axios';
+
+  export default {
+    name: 'HomePage',
+    components: {
+      FrontpageArticle,
+      Footer,
+      ListArticle
+    },
+    data() {
+      return {
+        frontPageArticles: [{
+          _id: String,
+          title: String,
+          subtitle: String,
+          body: String,
+          author: String,
+          imageUrl: String
+        }],
+        listArticles: [{
+          _id: String,
+          title: String,
+          subtitle: String,
+          body: String,
+          author: String,
+          imageUrl: String
+        }]
+      }
+    },
+    methods: {
+      setData(frontPageArticles, listArticles) {
+        this.frontPageArticles = frontPageArticles;
+        this.listArticles = listArticles;
+      }
+    },
+    beforeRouteEnter(to, from, next) {
+      var getFrontpageArticle = () => {
+        return axios.get('http://localhost:3000/articles/front')
+      }
+      var getListArticles = () => {
+        return axios.get('http://localhost:3000/articles/all');
+      }
+      axios.all([getFrontpageArticle(), getListArticles()]).then(axios.spread((frontPageArticles, listArticles) => {
+        next(vm => vm.setData(frontPageArticles.data, listArticles.data));
+      }));
+    }
+  }
+</script>
+
+<style media="screen">
+  .titles-container {
+    margin-bottom: 24px !important;
+  }
+  hr {
+    border-top: 2px solid #bbbbbb !important;
+  }
+  .article-list-container {
+    margin-top: 24px;
+  }
+</style>

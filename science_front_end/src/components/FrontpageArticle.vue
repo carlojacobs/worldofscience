@@ -1,9 +1,8 @@
 <template id="frontpage-article-template">
-  <div class="article-body container" v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.7)),url(' + articles[this.articleIndex].imageUrl + ') !important' }" v-on:click="navigateToFrontpageArticle">
+  <div class="article-body" v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(' + articles[this.articleIndex].imageUrl + ') !important' }" v-on:click="navigateToFrontpageArticle">
       <div class="article-headers">
-        <h1 class="article-title">{{articles[this.articleIndex].title}}</h1>
-        <h3 class="article-subtitle">{{articles[this.articleIndex].subtitle}}</h3>
-        <br>
+        <h1 class="article-title title is-3">{{this.getArticle().title}}</h1>
+        <h3 class="article-subtitle subtitle is-4">{{this.getArticle().subtitle}} <br> By <i>{{this.getArticle().author}}</i></h3>
         <progress class="progress frontpage-progress is-info" v-bind:value="(timeProgress/timeInterval)*100" max="100"/>
       </div>
   </div>
@@ -31,7 +30,7 @@
     },
     methods: {
       navigateToFrontpageArticle() {
-        this.$router.push('/article/' + this.articles[this.articleIndex]._id);
+        this.$router.push('/article/' + this.getArticle()._id);
       },
       nextArticle() {
         if (this.articleIndex < this.articles.length - 1) {
@@ -40,6 +39,9 @@
           this.articleIndex = 0;
         }
         this.timeProgress = 0;
+      },
+      getArticle() {
+        return this.articles[this.articleIndex];
       }
     },
     created() {
@@ -61,32 +63,33 @@
     position: relative;
     border-radius: 5px;
     cursor: pointer;
-    /* transition: .2s; */
+    padding: 2em !important;
+    transition: .2s;
   }
   /* Hover zoom animation */
-  /* .article-body:hover,
+  .article-body:hover,
   .article-body:focus {
     transform: scale(0.95);
     transition-delay: .05s;
-  } */
+  }
   .article-body:hover .article-title,
   .article-body:focus .article-title {
     text-decoration: underline;
   }
   .article-headers {
-    position: absolute;
+    position: absolute !important;
     color: white;
-    bottom: 1.5em;
-    left: 2em;
+    /* bottom: 2em; */
   }
   .article-title {
-    font-size: 30px;
-    font-weight: bold;
+    font-weight: bold !important;
+    color: white !important;
   }
   .article-subtitle {
-    font-size: 20px;
+    color: white !important;
   }
   .frontpage-progress {
     border-radius: 5px;
+    width: 50%;
   }
 </style>

@@ -36,4 +36,22 @@
   font-family: 'Roboto', sans-serif;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Playfair Display', serif; */
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .is-1 {
+      font-size: 2.5rem !important;
+    }
+    .is-2 {
+      font-size: 2rem !important;
+    }
+    .is-3 {
+      font-size: 1.5rem !important;
+    }
+    .is-4 {
+      font-size: 1rem !important;
+    }
+    .is-5 {
+      font-size: 1rem !important;
+    }
+  }
 </style>

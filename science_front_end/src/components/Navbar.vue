@@ -4,13 +4,13 @@
 			<div class="navbar-brand">
 				<!-- <router-link class="navbar-item" id="navbar-brand-science" to="/"><i class="fas fa-atom fa-2x"></i></router-link> -->
 				<router-link class="navbar-item wos-font" id="navbar-brand-science" to="/">World of Science</router-link>
-				<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+				<a role="button" class="navbar-burger burger" v-bind:class="{'is-active': navbarIsActive}" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" v-on:click="toggleNav">
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 				</a>
 			</div>
-			<div class="navbar-menu">
+			<div class="navbar-menu" id="navbarBasicExample" v-bind:class="{'is-active': navbarIsActive}">
 				<div class="navbar-start">
 					<router-link class="navbar-item" to="/">Home</router-link>
 					<router-link class="navbar-item" to="/about">About us</router-link>
@@ -41,7 +41,17 @@
 
 <script>
 export default {
-  name: 'Navbar'
+	name: 'Navbar',
+	data() {
+		return {
+			navbarIsActive: false
+		}
+	},
+	methods: {
+		toggleNav() {
+			this.navbarIsActive = !this.navbarIsActive;
+		}
+	}
 }
 </script>
 

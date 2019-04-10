@@ -5,7 +5,11 @@
         <h1 class="title is-1 wos-font">Welcome to the world of science.</h1>
         <h3 class="subtitle is-3">Read, learn, and share.</h3>
       </div>
-      <FrontpageArticle v-bind:articles="frontPageArticles"/>
+      <div class="container">
+        <div class="is-divider" data-content="WORLD OF SCIENCE"></div>
+        <h1 class="title is-3 wos-font">Spotlight</h1>
+        <FrontpageArticle v-bind:articles="frontPageArticles"/>
+      </div>
       <div class="container article-list-container">
         <div class="columns">
           <div class="column" style="">

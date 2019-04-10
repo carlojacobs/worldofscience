@@ -3,9 +3,8 @@
     <section class="hero is-medium is-info" v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url(' + article.imageUrl + ') !important' }">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">{{article.title}}</h1>
-          <h4 class="subtitle is-4">{{article.subtitle}}</h4>
-          <h5 class="subtitle is-5">By {{article.author}}</h5>
+          <h1 class="title is-2">{{article.title}}</h1>
+          <h4 class="subtitle is-4">{{article.subtitle}} <br> By <strong>{{article.author}}</strong></h4>
         </div>
       </div>
     </section>

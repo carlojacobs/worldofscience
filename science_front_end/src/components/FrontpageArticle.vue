@@ -65,6 +65,7 @@
     cursor: pointer;
     padding: 2em !important;
     transition: .2s;
+    box-shadow: 8px 8px 8px grey;
   }
   /* Hover zoom animation */
   .article-body:hover,

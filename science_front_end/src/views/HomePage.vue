@@ -11,8 +11,9 @@
         <FrontpageArticle v-bind:articles="frontPageArticles"/>
       </div>
       <div class="container article-list-container">
+        <div class="is-divider"/>
         <div class="columns">
-          <div class="column" style="">
+          <div class="column">
             <h1 class="title is-3 wos-font">Fresh Articles</h1>
             <ul class="article-list">
               <li v-for="(article, index) in listArticles" :key="index">
@@ -44,6 +45,7 @@
   import FrontpageArticle from '@/components/FrontpageArticle';
   import Footer from '@/components/Footer';
   import ListArticle from '@/components/ListArticle';
+  import { apiUrl } from '@/variables.js';
 
   // Axios
   import axios from 'axios';
@@ -83,10 +85,10 @@
     },
     beforeRouteEnter(to, from, next) {
       var getFrontpageArticle = () => {
-        return axios.get('http://localhost:3000/articles/front')
+        return axios.get(apiUrl + '/articles/front')
       }
       var getListArticles = () => {
-        return axios.get('http://localhost:3000/articles/all');
+        return axios.get(apiUrl + '/articles/all');
       }
       axios.all([getFrontpageArticle(), getListArticles()]).then(axios.spread((frontPageArticles, listArticles) => {
         next(vm => vm.setData(frontPageArticles.data, listArticles.data));

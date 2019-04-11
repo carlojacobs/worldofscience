@@ -46,6 +46,12 @@ router.get('/all', (req, res, next) => {
 
 // Create new article
 router.post('/create', (req, res, next) => {
+  const password = "WOS";
+  const passwordCandidate = req.body.password;
+  if (password !== passwordCandidate) {
+    res.send("Unauthorized");
+    res.end();
+  }
   var article = req.body.article;
   const newArticle = Article({
     title: article.title,

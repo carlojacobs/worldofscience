@@ -15,7 +15,8 @@ var articleSchema = new mongoose.Schema({
   body: String,
   imageUrl: String,
   author: String,
-  frontpage: Boolean
+  frontpage: Boolean,
+  date: String
 });
 
 mongoose.model('article', articleSchema);

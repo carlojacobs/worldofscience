@@ -2,8 +2,8 @@
   <div>
     <section class="section">
       <div class="container titles-container">
-        <h1 class="title is-1 wos-font">Welcome to the world of science.</h1>
-        <h3 class="subtitle is-3">Read, learn, and share.</h3>
+        <h1 class="title is-1 wos-font">Welcome to the world of science</h1>
+        <h3 class="subtitle is-3">Read, learn, and share</h3>
       </div>
       <div class="container">
         <div class="is-divider" data-content="WORLD OF SCIENCE"></div>

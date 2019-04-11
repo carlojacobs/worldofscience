@@ -3,8 +3,7 @@
     <div class="columns">
       <div class="column info-column">
         <h6 class="title is-5"><span class="index">{{index + 1}}. </span> <span class="title-span">{{article.title}}</span></h6>
-        <h5 class="subtitle is-6">{{article.subtitle}} <br> By <i>{{article.author}}</i></h5>
-        <div class="is-divider list-article-divider" :data-content="article.date"/>
+        <h5 class="subtitle is-6">{{article.subtitle}} <br> By <i>{{article.author}}</i> | {{article.date}}</h5>
       </div>
       <div class="column image-column">
         <figure class="image">
@@ -60,19 +59,10 @@
     color: #afafaf;
     text-decoration: none !important;
   }
-  .list-article-divider {
-    /* display: none; */
-  }
   @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .image-column {
-      /* display: none; */
-    }
-    .list-article {
-      /* padding: 1em 0; */
-    }
-    .list-article-divider {
-      /* display: block; */
+      display: none;
     }
   }
 </style>

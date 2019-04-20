@@ -4,18 +4,18 @@
       <div class="columns">
         <div class="column">
           <h1 class="title is-5">Contact</h1>
-          <form class="form-horizontal" >
+          <form class="form-horizontal" method="POST" action="https://formspree.io/carlormjacobs@gmail.com">
             <fieldset>
               <div class="field">
                 <label class="label" for="textinput-0">Name</label>
                 <div class="control">
-                  <input id="textinput-0" name="textinput-0" type="text" placeholder="Your name..." class="input ">
+                  <input name="name" type="text" placeholder="Your name..." class="input ">
                 </div>
               </div>
               <div class="field">
                 <label class="label" for="email">Email</label>
                 <div class="control">
-                  <input id="email" name="email" type="text" placeholder="Your email..." class="input ">
+                  <input name="_replyto" type="email" placeholder="Your email..." class="input ">
                   <p class="help">Don't worry, we won't share your email with anyone.</p>
                 </div>
               </div>
@@ -28,7 +28,7 @@
               <div class="field">
                 <label class="label" for="submit"></label>
                 <div class="control">
-                  <button id="submit" name="submit" class="button is-primary">Send</button>
+                  <input class="button is-primary is-medium" type="submit" value="Send"/>
                 </div>
               </div>
             </fieldset>

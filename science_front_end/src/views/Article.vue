@@ -11,15 +11,20 @@
     <section class="section">
       <div class="container article-container content body" v-html="article.body"></div>
     </section>
+    <Footer/>
   </div>
 </template>
 
 <script type="text/javascript">
   import axios from 'axios';
   import { apiUrl } from '@/variables.js';
+  import Footer from '@/components/Footer';
 
   export default {
     name: 'Article',
+    components: {
+      Footer
+    },
     data() {
       return {
         article: {

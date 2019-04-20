@@ -1,2 +1,2 @@
 // Global variables
-export const apiUrl = "http://192.168.2.121:3000";
+export const apiUrl = "https://worldofscience.ml/api";

@@ -5,7 +5,13 @@
         <div class="columns">
           <div class="column">
             <h1 class="title is-1 wos-font">About us.</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>
+              <b>World of Science</b> is a small organization that is trying to promote and communicate science to the world. It is a platform to read and learn about the amazing things that happen in our universe and on this special planet.
+              <br>
+              <p>If you have any question or feedback, please feel free to contact us using the form below</p>
+              <br>
+              <p>World of Science was created and is being maintained by <a href="https://carlojacobs.ga">Carlo Jacobs</a></p>
+            </p>
           </div>
           <div class="is-divider-vertical"/>
           <div class="column">

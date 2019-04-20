@@ -59,7 +59,8 @@ router.post('/create', (req, res, next) => {
     body: article.body,
     author: article.author,
     imageUrl: article.imageUrl,
-    frontpage: article.frontPage
+    frontpage: article.frontpage,
+    date: article.date
   });
   newArticle.save().then(() => {
     res.send(newArticle);

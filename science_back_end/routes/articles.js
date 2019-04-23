@@ -68,6 +68,7 @@ router.post('/create', (req, res, next) => {
   });
 });
 
+// Get articles by tag
 router.get('/tag/:tag', (req, res, next) => {
   var tag = req.params.tag;
   Article.find({tags: tag}, (err, articles) => {

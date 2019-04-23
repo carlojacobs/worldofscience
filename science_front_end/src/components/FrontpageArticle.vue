@@ -56,7 +56,6 @@
 <style media="screen">
   .article-body {
     color: white;
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.7)),url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'); */
     background-repeat: no-repeat;
     background-size: cover;
     height: 50vh;
@@ -92,5 +91,11 @@
   .frontpage-progress {
     border-radius: 5px;
     width: 50%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .article-body {
+      width: 100%;
+    }
   }
 </style>

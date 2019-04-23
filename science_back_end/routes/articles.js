@@ -60,11 +60,26 @@ router.post('/create', (req, res, next) => {
     author: article.author,
     imageUrl: article.imageUrl,
     frontpage: article.frontpage,
-    date: article.date
+    date: article.date,
+    tags: article.tags
   });
   newArticle.save().then(() => {
     res.send(newArticle);
   });
 });
+
+router.get('/tag/:tag', (req, res, next) => {
+  var tag = req.params.tag;
+  Article.find({tags: tag}, (err, articles) => {
+    if (err) {
+      res.json(err);
+      res.end();
+    }
+    if (articles) {
+      res.send(articles);
+      res.end();
+    }
+  });
+})
 
 module.exports = router;

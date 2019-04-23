@@ -23,15 +23,12 @@
           </div>
           <div class="is-divider-vertical" data-content="OR"></div>
           <div class="column">
-            <h1 class="title is-3 wos-font">News</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <div class="is-divider"></div>
-            <h1 class="title is-3 wos-font">Discover</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              <br>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <h3 class="title is-3 wos-font">Category: Physics</h3>
+            <ul class="article-list">
+              <li v-for="(article, index) in categoryArticles" :key="index">
+                <ListArticle :article="article" :index="index"/>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -45,7 +42,7 @@
   import FrontpageArticle from '@/components/FrontpageArticle';
   import Footer from '@/components/Footer';
   import ListArticle from '@/components/ListArticle';
-  import { apiUrl } from '@/variables.js';
+  import { apiUrl, emptyArticle } from '@/variables.js';
 
   // Axios
   import axios from 'axios';
@@ -59,28 +56,16 @@
     },
     data() {
       return {
-        frontPageArticles: [{
-          _id: String,
-          title: String,
-          subtitle: String,
-          body: String,
-          author: String,
-          imageUrl: String
-        }],
-        listArticles: [{
-          _id: String,
-          title: String,
-          subtitle: String,
-          body: String,
-          author: String,
-          imageUrl: String
-        }]
+        frontPageArticles: [emptyArticle],
+        listArticles: [emptyArticle],
+        categoryArticles: [emptyArticle]
       }
     },
     methods: {
-      setData(frontPageArticles, listArticles) {
+      setData(frontPageArticles, listArticles, categoryArticles) {
         this.frontPageArticles = frontPageArticles;
         this.listArticles = listArticles;
+        this.categoryArticles = categoryArticles;
       }
     },
     beforeRouteEnter(to, from, next) {
@@ -90,8 +75,11 @@
       var getListArticles = () => {
         return axios.get(apiUrl + '/articles/all');
       }
-      axios.all([getFrontpageArticle(), getListArticles()]).then(axios.spread((frontPageArticles, listArticles) => {
-        next(vm => vm.setData(frontPageArticles.data, listArticles.data));
+      var getCategoryArticles = () => {
+        return axios.get(apiUrl + '/articles/tag/wos');
+      }
+      axios.all([getFrontpageArticle(), getListArticles(), getCategoryArticles()]).then(axios.spread((frontPageArticles, listArticles, categoryArticles) => {
+        next(vm => vm.setData(frontPageArticles.data, listArticles.data, categoryArticles.data));
       }));
     }
   }

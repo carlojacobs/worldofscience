@@ -9,8 +9,12 @@ const mongoose = require('mongoose');
   useNewUrlParser: true
 });*/
 
-const dbUrl = 'mongodb://carlo:Dittoenbram1234@localhost:27017/worldofscience';
-mongoose.connect(dbUrl, { useNewUrlParser: true });
+const dbUrl = 'mongodb://localhost:27017/worldofscience';
+mongoose.connect(dbUrl, {
+	user: 'carlo',
+  pass: 'Dittoenbram1234',
+	useNewUrlParser: true
+});
 
 var articleSchema = new mongoose.Schema({
   title: String,

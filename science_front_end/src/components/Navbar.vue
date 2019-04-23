@@ -12,8 +12,9 @@
 			<div class="navbar-menu" id="navbarBasicExample" v-bind:class="{'is-active': navbarIsActive}">
 				<div class="navbar-start">
 					<router-link class="navbar-item" to="/">Home</router-link>
+					<router-link class="navbar-item" to="/categories">Categories</router-link>
 					<router-link class="navbar-item" to="/about">About us</router-link>
-					<div class="navbar-item has-dropdown" :class="{'is-active': navbarMenuIsActive}">
+					<!-- <div class="navbar-item has-dropdown" :class="{'is-active': navbarMenuIsActive}">
 						<a class="navbar-link" v-on:click="toggleNavMenu">More</a>
 						<div class="navbar-dropdown">
 							<a class="navbar-item">About</a>
@@ -22,7 +23,7 @@
 							<hr class="navbar-divider">
 							<a class="navbar-item">Report an issue</a>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</nav>

@@ -17,7 +17,7 @@
             <h1 class="title is-3 wos-font">Fresh Articles</h1>
             <ul class="article-list">
               <li v-for="(article, index) in listArticles" :key="index">
-                <ListArticle :article="article" :index="index"/>
+                <ListArticle :article="article"/>
               </li>
             </ul>
           </div>
@@ -26,7 +26,7 @@
             <h3 class="title is-3 wos-font">Category: Physics</h3>
             <ul class="article-list">
               <li v-for="(article, index) in categoryArticles" :key="index">
-                <ListArticle :article="article" :index="index"/>
+                <ListArticle :article="article"/>
               </li>
             </ul>
           </div>

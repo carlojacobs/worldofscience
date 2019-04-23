@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import HomePage from './views/HomePage.vue';
 import Article from './views/Article.vue';
 import About from './views/About.vue';
+import Categories from './views/Categories.vue';
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: About
+    },
+    {
+      path: '/categories',
+      name: 'categories',
+      component: Categories
     }
   ],
   scrollBehavior (to, from, savedPosition) {

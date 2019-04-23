@@ -59,6 +59,7 @@
         frontPageArticles: [emptyArticle],
         listArticles: [emptyArticle],
         categoryArticles: [emptyArticle]
+        tag: 'physics'
       }
     },
     methods: {
@@ -76,7 +77,7 @@
         return axios.get(apiUrl + '/articles/all');
       }
       var getCategoryArticles = () => {
-        return axios.get(apiUrl + '/articles/tag/wos');
+        return axios.get(apiUrl + '/articles/tag/' + this.tag);
       }
       axios.all([getFrontpageArticle(), getListArticles(), getCategoryArticles()]).then(axios.spread((frontPageArticles, listArticles, categoryArticles) => {
         next(vm => vm.setData(frontPageArticles.data, listArticles.data, categoryArticles.data));

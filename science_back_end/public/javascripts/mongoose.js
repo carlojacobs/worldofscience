@@ -9,8 +9,9 @@ const mongoose = require('mongoose');
   useNewUrlParser: true
 });*/
 
-const dbUrl = 'mongodb://localhost:27017/worldofscience';
+const dbUrl = 'mongodb://188.166.0.103:27017/worldofscience';
 mongoose.connect(dbUrl, {
+	auth: { authSource: "admin" },
 	user: 'carlo',
   pass: 'Dittoenbram1234',
 	useNewUrlParser: true

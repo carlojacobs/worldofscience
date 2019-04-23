@@ -58,7 +58,7 @@
       return {
         frontPageArticles: [emptyArticle],
         listArticles: [emptyArticle],
-        categoryArticles: [emptyArticle]
+        categoryArticles: [emptyArticle],
         tag: 'physics'
       }
     },

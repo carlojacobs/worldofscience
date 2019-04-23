@@ -4,7 +4,7 @@
       <div class="hero-body">
         <div class="container article-container">
           <h1 class="title is-2">{{article.title}}</h1>
-          <h4 class="subtitle is-4">{{article.subtitle}} <br> By <strong>{{article.author}}</strong></h4>
+          <h4 class="subtitle is-4">{{article.subtitle}} <br> By <strong>{{article.author}}</strong> on {{article.date}}</h4>
         </div>
       </div>
     </section>

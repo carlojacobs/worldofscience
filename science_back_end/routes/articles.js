@@ -36,7 +36,8 @@ router.get('/front', (req, res, next) => {
 });
 
 // Get fresh articles
-router.get('/fresh', (req, res, next) => {
+router.get('/fresh/:limit', (req, res, next) => {
+  var limit = req.params.limit;
   Article.find().exec((err, articles) => {
     if (err) {
       res.send(err);
@@ -45,7 +46,7 @@ router.get('/fresh', (req, res, next) => {
     var freshArticles = articles.sort((a, b) => {
       return (Date.parse(b.date) - Date.parse(a.date));
     }).reverse();
-    freshArticles.length = 4;
+    freshArticles.length = limit;
     res.send(freshArticles);
     res.end();
   });

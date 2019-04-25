@@ -50,7 +50,10 @@
       font-size: 1rem !important;
     }
     .is-5 {
-      font-size: 1rem !important;
+      font-size: 0.8rem !important;
+    }
+    .is-6 {
+      font-size: 0.6rem !important;
     }
   }
 </style>

@@ -3,18 +3,16 @@
 	<div class="container">
 		<h1 class="title is-1">Categories</h1>
 		<h3 class="subtitle is-3">Find stories by topic.</h3>
-		<div class="tabs">
+		<div class="tabs is-boxed">
 		  <ul>
 		  	<div v-for="category in categories"><li :class="{'is-active': (activeCategory == category.key)}" v-on:click="switchCategory(category.key)"><a>{{category.title}}</a></li></div>
 		  </ul>
 		</div>
-		<div>
-			<ul class="article-list">
-        <li v-for="(article, index) in articles" :key="index">
-          <ListArticle :article="article"/>
-        </li>
-      </ul>
-		</div>
+		<div class="category-articles-container">
+      <div v-for="(article, key) in articles" class="category-article">
+        <ListArticle :article="article" :key="index"/>
+      </div>
+    </div>
 	</div>
 </section>
 </template>
@@ -45,7 +43,6 @@
 		},
 		methods: {
 			switchCategory(newCategory) {
-				this.articles = [];
 				this.activeCategory = newCategory;
 				this.loadArticles();
 			},
@@ -63,3 +60,23 @@
 		}
 	}
 </script>
+
+<style>
+	.category-articles-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+    flex-wrap: wrap;
+  }
+  .category-article {
+    display: flex;
+    padding: 0 .5rem;
+    width: 33%;
+  }
+  @media(max-width:768px) {
+    .category-article {
+      width: 50%;
+    }
+  }
+</style>

@@ -1,5 +1,5 @@
 <template id="frontpage-article-template">
-  <div class="article-body" v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(' + articles[this.articleIndex].imageUrl + ') !important' }" v-on:click="navigateToFrontpageArticle">
+  <div class="container article-body" v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(' + articles[this.articleIndex].imageUrl + ') !important' }" v-on:click="navigateToFrontpageArticle">
       <div class="article-headers">
         <h1 class="article-title title is-3">{{this.getArticle().title}}</h1>
         <h3 class="article-subtitle subtitle is-4">{{this.getArticle().subtitle}} <br> By <i>{{this.getArticle().author}}</i></h3>
@@ -72,14 +72,8 @@
     transform: scale(0.95);
     transition-delay: .05s;
   }
-  .article-body:hover .article-title,
-  .article-body:focus .article-title {
-    text-decoration: underline;
-  }
   .article-headers {
-    position: absolute !important;
     color: white;
-    /* bottom: 2em; */
   }
   .article-title {
     font-weight: bold !important;
@@ -90,7 +84,7 @@
   }
   .frontpage-progress {
     border-radius: 5px;
-    width: 50%;
+    width: 8rem;
   }
 
   @media only screen and (max-width: 768px) {

@@ -5,30 +5,16 @@
         <h1 class="title is-1 wos-font">Welcome to the world of science</h1>
         <h3 class="subtitle is-3">Read, learn, and share</h3>
       </div>
-      <div class="container">
+      <div class="container spotlight-container">
         <div class="is-divider" data-content="WORLD OF SCIENCE"></div>
         <h1 class="title is-3 wos-font">Spotlight</h1>
         <FrontpageArticle v-bind:articles="frontPageArticles"/>
       </div>
-      <div class="container article-list-container">
-        <div class="is-divider"/>
-        <div class="columns">
-          <div class="column">
-            <h1 class="title is-3 wos-font">Fresh Articles</h1>
-            <ul class="article-list">
-              <li v-for="(article, index) in listArticles" :key="index">
-                <ListArticle :article="article"/>
-              </li>
-            </ul>
-          </div>
-          <div class="is-divider-vertical" data-content="OR"></div>
-          <div class="column">
-            <h3 class="title is-3 wos-font">Category: Physics</h3>
-            <ul class="article-list">
-              <li v-for="(article, index) in categoryArticles" :key="index">
-                <ListArticle :article="article"/>
-              </li>
-            </ul>
+      <div class="container fresh-container">
+        <h2 class="title is-3 wos-font">Fresh Stories</h2>
+        <div class="fresh-articles-container">
+          <div v-for="(article, key) in freshArticles" class="fresh-article">
+            <ListArticle :article="article" :key="index"/>
           </div>
         </div>
       </div>
@@ -57,29 +43,29 @@
     data() {
       return {
         frontPageArticles: [emptyArticle],
-        listArticles: [emptyArticle],
+        freshArticles: [emptyArticle],
         categoryArticles: [emptyArticle]
       }
     },
     methods: {
-      setData(frontPageArticles, listArticles, categoryArticles) {
+      setData(frontPageArticles, freshArticles, categoryArticles) {
         this.frontPageArticles = frontPageArticles;
-        this.listArticles = listArticles;
         this.categoryArticles = categoryArticles;
+        this.freshArticles = freshArticles;
       }
     },
     beforeRouteEnter(to, from, next) {
       var getFrontpageArticle = () => {
         return axios.get(apiUrl + '/articles/front')
       }
-      var getListArticles = () => {
+      var getFreshArticles = () => {
         return axios.get(apiUrl + '/articles/all');
       }
       var getCategoryArticles = () => {
         return axios.get(apiUrl + '/articles/tag/physics');
       }
-      axios.all([getFrontpageArticle(), getListArticles(), getCategoryArticles()]).then(axios.spread((frontPageArticles, listArticles, categoryArticles) => {
-        next(vm => vm.setData(frontPageArticles.data, listArticles.data, categoryArticles.data));
+      axios.all([getFrontpageArticle(), getFreshArticles(), getCategoryArticles()]).then(axios.spread((frontPageArticles, freshArticles, categoryArticles) => {
+        next(vm => vm.setData(frontPageArticles.data, freshArticles.data, categoryArticles.data));
       }));
     }
   }
@@ -92,7 +78,24 @@
   hr {
     border-top: 2px solid #bbbbbb !important;
   }
-  .article-list-container {
-    margin-top: 24px;
+  .fresh-container {
+    margin-top: 2rem;
+  }
+  .fresh-articles-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+    flex-wrap: wrap;
+  }
+  .fresh-article {
+    display: flex;
+    padding: 0 .5rem;
+    width: 33%;
+  }
+  @media(max-width:768px) {
+    .fresh-article {
+      width: 50%;
+    }
   }
 </style>

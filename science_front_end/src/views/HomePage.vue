@@ -1,4 +1,4 @@
-<template id="homepage_template">
+<template id="homepage-template">
   <div>
     <section class="section">
       <div class="container titles-container">
@@ -13,7 +13,7 @@
       <div class="container fresh-container">
         <h2 class="title is-3 wos-font">Fresh Stories</h2>
         <div class="fresh-articles-container">
-          <div v-for="(article, key) in freshArticles" class="fresh-article">
+          <div v-for="(article, index) in freshArticles" class="fresh-article">
             <ListArticle :article="article" :key="index"/>
           </div>
         </div>

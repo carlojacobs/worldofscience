@@ -9,7 +9,6 @@ var Article = mongoose.model('article')
 
 // Get article by ID
 router.get('/article/:id', (req, res, next) => {
-  console.log("HELLO")
   var id = req.params.id;
   Article.findById(id, (err, article) => {
     if (err) {
@@ -34,6 +33,19 @@ router.get('/front', (req, res, next) => {
       res.end()
     }
   });
+});
+
+// Get fresh articles
+router.get('/fresh', (req, res, next) => {
+  var query = Article.find().limit(4);
+  query.exec((err, articles) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(articles);
+      res.end();
+    }
+  })
 });
 
 // Get all articles

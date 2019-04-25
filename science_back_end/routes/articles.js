@@ -37,15 +37,18 @@ router.get('/front', (req, res, next) => {
 
 // Get fresh articles
 router.get('/fresh', (req, res, next) => {
-  var query = Article.find().limit(4);
-  query.exec((err, articles) => {
+  Article.find().exec((err, articles) => {
     if (err) {
-      console.log(err);
-    } else {
-      res.send(articles);
+      res.send(err);
       res.end();
     }
-  })
+    var freshArticles = articles.sort((a, b) => {
+      return (Date.parse(b.date) - Date.parse(a.date));
+    }).reverse();
+    freshArticles.length = 4;
+    res.send(freshArticles);
+    res.end();
+  });
 });
 
 // Get all articles

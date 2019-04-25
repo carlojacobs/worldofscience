@@ -59,7 +59,7 @@
         return axios.get(apiUrl + '/articles/front')
       }
       var getFreshArticles = () => {
-        return axios.get(apiUrl + '/articles/fresh');
+        return axios.get(apiUrl + '/articles/fresh/6');
       }
       var getCategoryArticles = () => {
         return axios.get(apiUrl + '/articles/tag/physics');

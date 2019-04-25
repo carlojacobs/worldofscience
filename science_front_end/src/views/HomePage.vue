@@ -6,9 +6,10 @@
         <h3 class="subtitle is-3">Read, learn, and share</h3>
       </div>
       <div class="container spotlight-container">
-        <div class="is-divider" data-content="WORLD OF SCIENCE"></div>
+        <hr>
         <h1 class="title is-3 wos-font">Spotlight</h1>
-        <FrontpageArticle v-bind:articles="frontPageArticles"/>
+        <!-- <FrontpageArticle v-bind:articles="frontPageArticles"/> -->
+        <FrontPageCarousel :articles="frontPageArticles"/>
       </div>
       <div class="container fresh-container">
         <h2 class="title is-3 wos-font">Fresh Stories</h2>
@@ -29,6 +30,7 @@
   import Footer from '@/components/Footer';
   import ListArticle from '@/components/ListArticle';
   import { apiUrl, emptyArticle } from '@/variables.js';
+  import FrontPageCarousel from '@/components/FrontPageCarousel';
 
   // Axios
   import axios from 'axios';
@@ -38,7 +40,8 @@
     components: {
       FrontpageArticle,
       Footer,
-      ListArticle
+      ListArticle,
+      FrontPageCarousel
     },
     data() {
       return {

@@ -15,6 +15,9 @@
 	        <ListArticle :article="article" :key="index"/>
 	      </div>
 	    </div>
+	    <div class="filtered-articles-container" v-if="(searchQuery == '')">
+		    <p >Results...</p>    	
+	    </div>
 		</div>
 	</section>
 </template>
@@ -32,7 +35,8 @@
 		data() {
 			return {
 				searchQuery: '',
-				articles: []
+				articles: [],
+				loading: true
 			}
 		},
 		methods: {

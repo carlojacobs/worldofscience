@@ -3,9 +3,10 @@
     <div class="container">
       <div class="columns">
         <div class="column">
-          <h1 class="title is-5">Contact</h1>
+          <h1 class="title is-4">Contact</h1>
+          <h5 class="subtitle is-5">If you have any feedback, we would to hear it.</h5>
           <form class="form-horizontal" method="POST" action="https://formspree.io/carlormjacobs@gmail.com">
-            <fieldset>
+            <fieldset class="box">
               <div class="field">
                 <label class="label" for="textinput-0">Name</label>
                 <div class="control">
@@ -35,12 +36,16 @@
             </form>
         </div>
         <div class="column footer-column">
-          <h1 class="title is-5">About</h1>
+          <h1 class="title is-4">About</h1>
           <p><strong>World of Science</strong> is a small organization that tries to communicate the beauty of science to the world. We hope to inspire and educate people around the globe.</p>
         </div>
         <div class="column footer-column">
-          <h1 class="title is-5">Navigate To</h1>
+          <h1 class="title is-4">Navigate To</h1>
           <router-link to="/" class="wos-a">Home</router-link>
+          <br>
+          <router-link to="/categories" class="wos-a">Categories</router-link>
+          <br>
+          <router-link to="/search" class="wos-a">Search</router-link>
           <br>
           <router-link to="/about" class="wos-a">About us</router-link>
         </div>

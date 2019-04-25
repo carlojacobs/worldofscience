@@ -10,6 +10,7 @@
   // Import components
   import Navbar from '@/components/Navbar';
 
+  // App
   export default {
     name: 'app',
     components: {

@@ -9,9 +9,6 @@
 <script type="text/javascript">
   // Import components
   import Navbar from '@/components/Navbar';
-  // Import css
-  import '../node_modules/bulma/css/bulma.min.css';
-  import '../node_modules/bulma-divider/dist/css/bulma-divider.min.css';
 
   export default {
     name: 'app',

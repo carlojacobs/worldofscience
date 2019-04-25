@@ -3,7 +3,7 @@
       <div class="article-headers">
         <h1 class="article-title title is-3">{{this.getArticle().title}}</h1>
         <h3 class="article-subtitle subtitle is-4">{{this.getArticle().subtitle}} <br> By <i>{{this.getArticle().author}}</i></h3>
-        <progress class="progress frontpage-progress is-info" v-bind:value="(timeProgress/timeInterval)*100" max="100"/>
+        <progress class="progress frontpage-progress is-primary" v-bind:value="(timeProgress/timeInterval)*100" max="100"/>
       </div>
   </div>
 </template>

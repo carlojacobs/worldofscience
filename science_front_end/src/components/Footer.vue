@@ -28,7 +28,7 @@
               <div class="field">
                 <label class="label" for="submit"></label>
                 <div class="control">
-                  <input class="button is-dark is-medium" type="submit" value="Send"/>
+                  <input class="button is-primary is-medium" type="submit" value="Send"/>
                 </div>
               </div>
             </fieldset>
@@ -40,12 +40,12 @@
         </div>
         <div class="column footer-column">
           <h1 class="title is-5">Navigate To</h1>
-          <router-link to="/">Home</router-link>
+          <router-link to="/" class="wos-a">Home</router-link>
           <br>
-          <router-link to="/about">About us</router-link>
+          <router-link to="/about" class="wos-a">About us</router-link>
         </div>
       </div>
-      <p><strong>World of Science</strong> was created and is being maintained by <a href="http://carlojacobs.ga">Carlo Jacobs</a>.</p>
+      <p><strong>World of Science</strong> was created and is being maintained by <a href="http://carlojacobs.ga" class="wos-a">Carlo Jacobs</a>.</p>
       <br>
       <small>&copy; Copyright 2019, Carlo Jacobs</small>
     </div>
@@ -63,6 +63,5 @@
     position: absolute;
     width: 100%;
     margin-top: 24px !important;
-    /* text-align: center; */
   }
 </style>

@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+// Set your brand colors
+// Darkblue
+$wos-color: #26547C;
+// I wanna say bordeaux red but eh
+// $wos-color: #48233C;
+// Lighter green a bit like olive
+// $wos-color: #5B8266;
+// Dark green
+// $wos-color: #294936;
+// Orange
+// $wos-color: #FF6B35;
+// Lighter blue
+// $wos-color: #3891A6;
+// Yellow
+// $wos-color: #FDE74C;
+// Baby blue
+// $wos-color: #6DAEDB;
+
+
+$primary: $wos-color;
+$footer-background-color: #FCFCFC;
+$tabs-link-active-color: $primary;
+#navbar-brand-science {
+	background: $primary !important;
+}
+
+.wos-a {
+	color: $primary !important;
+}
+
+@import "../../node_modules/bulma/bulma.sass";

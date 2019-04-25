@@ -39,7 +39,7 @@ export default new Router({
     }
   ],
   mode: 'history',
-  linkExactActiveClass: 'nav-item-is-active',
+  linkExactActiveClass: 'is-active',
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
   }

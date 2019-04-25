@@ -4,7 +4,7 @@
       <div class="container">
         <div class="columns">
           <div class="column">
-            <h1 class="title is-1 wos-font">About us.</h1>
+            <h1 class="title is-1 wos-font">About us</h1>
             <p>
               <b>World of Science</b> is a small organization that is trying to promote and communicate science to the world. It is a platform to read and learn about the amazing things that happen in our universe and on this special planet.
               <br>

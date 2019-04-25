@@ -5,6 +5,7 @@ import HomePage from './views/HomePage.vue';
 import Article from './views/Article.vue';
 import About from './views/About.vue';
 import Categories from './views/Categories.vue';
+import Search from './views/Search.vue';
 
 Vue.use(Router)
 
@@ -30,9 +31,15 @@ export default new Router({
       path: '/categories',
       name: 'categories',
       component: Categories
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search
     }
   ],
   mode: 'history',
+  linkExactActiveClass: 'nav-item-is-active',
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
   }

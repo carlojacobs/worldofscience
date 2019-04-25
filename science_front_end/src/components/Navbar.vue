@@ -13,6 +13,7 @@
 				<div class="navbar-start">
 					<router-link class="navbar-item" to="/">Home</router-link>
 					<router-link class="navbar-item" to="/categories">Categories</router-link>
+					<router-link class="navbar-item" to="/search">Search</router-link>
 					<router-link class="navbar-item" to="/about">About us</router-link>
 				</div>
 			</div>
@@ -41,8 +42,14 @@ export default {
 	#navbar-brand-science {
 		font-weight: bold;
 		font-size: 1rem;
+		color: black !important;
+		background: white !important;
 	}
 	nav {
 		border-bottom: 1px solid #eeeeee;
+	}
+	.nav-item-is-active {
+		color: hsl(217, 71%, 53%) !important;
+		background-color: hsl(0, 0%, 98%) !important;
 	}
 </style>

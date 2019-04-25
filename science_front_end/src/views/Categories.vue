@@ -9,7 +9,7 @@
 		  </ul>
 		</div>
 		<div class="category-articles-container">
-      <div v-for="(article, key) in articles" class="category-article">
+      <div v-for="(article, index) in articles" class="category-article">
         <ListArticle :article="article" :key="index"/>
       </div>
     </div>

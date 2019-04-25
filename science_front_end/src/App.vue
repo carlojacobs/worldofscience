@@ -53,7 +53,7 @@
       font-size: 0.8rem !important;
     }
     .is-6 {
-      font-size: 0.6rem !important;
+      font-size: 0.7rem !important;
     }
   }
 </style>

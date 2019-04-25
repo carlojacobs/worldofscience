@@ -28,7 +28,7 @@
               <div class="field">
                 <label class="label" for="submit"></label>
                 <div class="control">
-                  <input class="button is-primary is-medium" type="submit" value="Send"/>
+                  <input class="button is-dark is-medium" type="submit" value="Send"/>
                 </div>
               </div>
             </fieldset>

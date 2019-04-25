@@ -38,7 +38,6 @@
 		methods: {
 			setData(articles) {
 				this.articles = articles;
-				console.log(articles);
 			}
 		},
 		computed: {

@@ -29,7 +29,10 @@ router.get('/front', (req, res, next) => {
       res.end();
     }
     if (articles) {
-      res.send(articles);
+      var frontPageArticles = articles.sort((a, b) => {
+        return (Date.parse(b.date) - Date.parse(a.date));
+      }).reverse();
+      res.send(frontPageArticles);
       res.end()
     }
   });

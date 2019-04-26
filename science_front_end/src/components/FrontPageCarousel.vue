@@ -1,5 +1,5 @@
 <template>
-	<carousel :per-page="1" :autoplay="true" :autoplayTimeout="8000" :paginationEnabled="true" :navigationEnabled="false" :loop="true">
+	<carousel :per-page="1" :autoplay="true" :autoplayTimeout="8000" :paginationEnabled="true" :navigationEnabled="false" :loop="true" :autoplayHoverPause="false">
 		<slide v-for="article in articles">
 			<div class="carousel-article" :style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(' + article.imageUrl + ') !important' }" v-on:click="navigateToArticle(article._id)">
 				<div>

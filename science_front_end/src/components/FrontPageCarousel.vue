@@ -1,6 +1,6 @@
 <template>
 	<carousel :per-page="1" :autoplay="true" :autoplayTimeout="6000" :paginationEnabled="true" :navigationEnabled="false" :loop="true" :autoplayHoverPause="false">
-		<slide v-for="article in articles">
+		<slide v-for="article in articles" :key="article._id">
 			<div class="carousel-article" :style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(' + article.imageUrl + ') !important' }" v-on:click="navigateToArticle(article._id)">
 				<div>
 					<h3 class="title is-3 carousel-article-header">{{article.title}}</h3>

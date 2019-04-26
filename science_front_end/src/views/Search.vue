@@ -2,7 +2,7 @@
 	<section class="section">
 		<div class="container">
 			<h1 class="title is-1">Search</h1>
-			<h3 class="subtitle is-3">Find stories by title.</h3>
+			<h3 class="subtitle is-3">Find stories by anything.</h3>
 			<form>
 				<div class="field">
 				  <div class="control">
@@ -47,7 +47,9 @@
 		computed: {
 			filteredArticles: function() {
 				return this.articles.filter((article) => {
-					return article.title.toLowerCase().match(this.searchQuery.toLowerCase());
+					if (article.title.toLowerCase().match(this.searchQuery.toLowerCase()) || article.subtitle.toLowerCase().match(this.searchQuery.toLowerCase()) || article.body.toLowerCase().match(this.searchQuery.toLowerCase()) || article.date.toLowerCase().match(this.searchQuery.toLowerCase()) || article.author.toLowerCase().match(this.searchQuery.toLowerCase())) {
+						return true;
+					}
 				});
 			}
 		},

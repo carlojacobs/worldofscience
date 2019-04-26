@@ -12,10 +12,10 @@
 				</div>
 				<div class="navbar-menu" id="navbarBasicExample" v-bind:class="{'is-active': navbarIsActive}">
 					<div class="navbar-start">
-						<router-link class="navbar-item" to="/">Home</router-link>
-						<router-link class="navbar-item" to="/categories">Categories</router-link>
-						<router-link class="navbar-item" to="/search">Search</router-link>
-						<router-link class="navbar-item" to="/about">About us</router-link>
+						<router-link class="navbar-item" to="/"><i class="fas fa-home" style="margin-right: .5rem;"></i>Home</router-link>
+						<router-link class="navbar-item" to="/categories"><i class="fas fa-bookmark" style="margin-right: .5rem;"></i>Categories</router-link>
+						<router-link class="navbar-item" to="/search"><i class="fas fa-search" style="margin-right: .5rem;"></i>Search</router-link>
+						<router-link class="navbar-item" to="/about"><i class="fas fa-info-circle" style="margin-right: .5rem;"></i>About us</router-link>
 					</div>
 				</div>
 			</div>

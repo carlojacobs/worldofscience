@@ -65,7 +65,7 @@ router.get('/all', (req, res, next) => {
 
 // Create new article
 router.post('/create', (req, res, next) => {
-  const password = "WOS";
+  const password = "Nice try!;)";
   const passwordCandidate = req.body.password;
   if (password !== passwordCandidate) {
     res.send("Unauthorized");

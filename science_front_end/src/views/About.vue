@@ -10,7 +10,7 @@
               <br>
               <p>If you have any question or feedback, please feel free to contact us using the form below</p>
               <br>
-              <p>World of Science was created and is being maintained by <a href="https://carlojacobs.ga" class="wos-a">Carlo Jacobs</a></p>
+              <p>World of Science was created and is being maintained by <a href="https://carlo-jacobs.com" class="wos-a">Carlo Jacobs</a></p>
             </p>
           </div>
           <div class="is-divider-vertical"/>

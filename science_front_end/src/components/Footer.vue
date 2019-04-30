@@ -50,7 +50,7 @@
           <router-link to="/about" class="wos-a">About us</router-link>
         </div>
       </div>
-      <p><strong>World of Science</strong> was created and is being maintained by <a href="http://carlojacobs.ga" class="wos-a">Carlo Jacobs</a>.</p>
+      <p><strong>World of Science</strong> was created and is being maintained by <a href="http://carlo-jacobs.com" class="wos-a">Carlo Jacobs</a>.</p>
       <br>
       <small>&copy; Copyright 2019, Carlo Jacobs</small>
     </div>

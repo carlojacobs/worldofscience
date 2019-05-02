@@ -8,7 +8,7 @@ const dbUrl = 'mongodb://188.166.0.103:27017/worldofscience';
 mongoose.connect(dbUrl, {
 	auth: { authSource: "admin" },
 	user: 'carlo',
-  pass: 'Nice try',
+  pass: 'Dittoenbram1234',
 	useNewUrlParser: true
 });
 

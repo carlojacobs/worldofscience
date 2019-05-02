@@ -31,7 +31,7 @@ router.get('/front', (req, res, next) => {
     if (articles) {
       var frontPageArticles = articles.sort((a, b) => {
         return (Date.parse(b.date) - Date.parse(a.date));
-      }).reverse();
+      });
       res.send(frontPageArticles);
       res.end()
     }
@@ -48,7 +48,7 @@ router.get('/fresh/:limit', (req, res, next) => {
     }
     var freshArticles = articles.sort((a, b) => {
       return (Date.parse(b.date) - Date.parse(a.date));
-    }).reverse();
+    });
     freshArticles.length = limit;
     res.send(freshArticles);
     res.end();

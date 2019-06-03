@@ -59,13 +59,13 @@
     },
     beforeRouteEnter(to, from, next) {
       var getFrontpageArticle = () => {
-        return axios.get(apiUrl + '/articles/front')
+        return axios.get(apiUrl + '/front')
       }
       var getFreshArticles = () => {
-        return axios.get(apiUrl + '/articles/fresh/6');
+        return axios.get(apiUrl + '/fresh/6');
       }
       var getCategoryArticles = () => {
-        return axios.get(apiUrl + '/articles/tag/physics');
+        return axios.get(apiUrl + '/tag/physics');
       }
       axios.all([getFrontpageArticle(), getFreshArticles(), getCategoryArticles()]).then(axios.spread((frontPageArticles, freshArticles, categoryArticles) => {
         next(vm => vm.setData(frontPageArticles.data, freshArticles.data, categoryArticles.data));

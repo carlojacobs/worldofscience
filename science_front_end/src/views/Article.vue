@@ -42,7 +42,7 @@
     },
     beforeRouteEnter(to, from, next) {
       const id = to.params.id;
-      const url = apiUrl + '/articles/article/' + id
+      const url = apiUrl + '/article/' + id
       axios.get(url).then(res => {
         next(vm => vm.setData(res.data));
       }).catch(err => {

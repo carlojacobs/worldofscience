@@ -54,7 +54,7 @@
 			}
 		},
 		beforeRouteEnter(to, from, next) {
-      var url = apiUrl + '/articles/all';
+      var url = apiUrl + '/all';
       axios.get(url).then(res => {
         next(vm => vm.setData(res.data));
       }).catch(err => {
